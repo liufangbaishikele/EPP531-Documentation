@@ -18,10 +18,10 @@ From the left side item - Download- [Website for downloading raw data](https://b
 
 ### Installation of export2graphlan
 
-1) Download python
-2) Install Biom-format from anaconda cloud
-3) Install panda from anaconda cloud
-4) Install Scipy from Anaconda
+1) Download **python**
+2) Install **Biom-format** from anaconda cloud
+3) Install **panda** from anaconda cloud
+4) Install **Scipy** from Anaconda
 After installation into my directory, run the below command to put this subfolder into the **system path**, so that you can use above softwares from anywhere in your system:
 
 ```
