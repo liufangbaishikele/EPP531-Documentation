@@ -112,6 +112,29 @@ Now the ``hmp_tree.txt`` and ``hmp_annot.txt`` are generated. AND these two file
 
 ### Finally, Let's run GraPhlAn analysis
 
+```
+graphlan_annotate.py hmp_tree.txt  hmp_annot_tree.txt --annot hmp_annot.txt
+
+```
+The ``graphlan_annotate.py`` function will generate tree file with annotation information.
+
+Now, let's plot the tree!!!
+
+```
+graphlan.py hmp_annot_tree.txt  hmp_tree.png --dpi 300 --size 14
+
+```
+WOW, feel so excited to look at the tree!!!
+
+WELL, png image file need to be visualize on my local computer. Let me transfer it from Beacon server to my computer
+
+```
+scp -r -P 22 fliu21@duo.acf.tennessee.edu:/lustre/medusa/fliu21/circular_phylogenetic_tree/export2graphan_demo/hmp_tree.png /Users/fangliu/Desktop/
+
+```
+
+
+
 
 
 
