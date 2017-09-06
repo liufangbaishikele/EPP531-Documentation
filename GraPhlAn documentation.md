@@ -70,11 +70,47 @@ RUN LEfSE analysis
 ```
 python run_lefse.py hmp_aerobiosis_small.in hmp_aerobiosis_small.res
 ```
-Now **LEfSe input data** - ``hmp_aerobiosis_small.txt``
-**LEfSe input data** - ``hmp_aerobiosis_small.txt``
-are ready for antomatic annotation using **export2graphlan**
+HERE is what the LEfSe output file looks like:
 
-### 
+```
+Bacteria.Actinobacteria.Actinobacteria.Actinomycetales.Micromonosporaceae.Actinocatenispora     0.932620780672                  -
+Bacteria.Firmicutes.Bacilli.Bacillales.Planococcaceae.Paenisporosarcina 0.932620780672                  -
+Bacteria.Actinobacteria.Actinobacteria.Coriobacteriales.Coriobacteriaceae	4.1742722203                    -
+Bacteria.Firmicutes.Bacilli.Bacillales.Bacillaceae.Exiguobacterium	3.14961753202                   -
+Bacteria.Firmicutes.Clostridia.Clostridiales.Eubacteriaceae     3.01763255894                   -
+Bacteria.Firmicutes.Bacilli.Bacillales.Bacillaceae.Ureibacillus 0.932620780672                  -
+Bacteria.Actinobacteria.Actinobacteria.Actinomycetales.Micromonosporaceae	1.93262078067                   -
+Bacteria.Proteobacteria.Alphaproteobacteria.Rhizobiales.Brucellaceae.Ochrobactrum	0.932620780672                  -
+Bacteria.Firmicutes.Bacilli.Lactobacillales.Lactobacillaceae.Paralactobacillus  0.932620780672                  -
+Bacteria.Proteobacteria.Gammaproteobacteria.Cardiobacteriales.Cardiobacteriaceae.Suttonella     0.932620780672                  -
+Bacteria.Proteobacteria.Betaproteobacteria.Burkholderiales.Comamonadaceae.Curvibacter   0.932620780672                  -
+Bacteria.Firmicutes.Clostridia.Clostridiales.Lachnospiraceae.Anaerostipes	2.51843157654   Low_O2  4.27481432877   0.00160691102896
+Bacteria.Actinobacteria.Actinobacteria.Actinomycetales.Micrococcaceae.Arthrobacter	2.10647315409                   -
+Bacteria.Proteobacteria.Betaproteobacteria.Neisseriales.Neisseriaceae.Kingella  3.68124168207                   -
+Bacteria.Bacteroidetes.Flavobacteria.Flavobacteriales.Flavobacteriaceae.Elizabethkingia 1.50755996482                   -
+Bacteria.Bacteria_incertae_sedis.Ktedonobacteria.Ktedonobacterales.Ktedonobacteraceae   0.932620780672                  -
+
+```
+
+Now copy files from current directory to export2graphlan working directory (where I installed export2graphan)
+
+```
+cp hmp_aerobiosis_small.txt hmp_aerobiosis_small.res /lustre/medusa/fliu21/circular_phylogenetic_tree/export2graphan_demo/
+```
+
+### Run export2graphlan
+
+```
+cd /lustre/medusa/fliu21/circular_phylogenetic_tree/export2graphan_demo
+```
+You will see files two hmp file inside of the directory
+
+```
+python export2graphlan.py -i hmp_aerobiosis_small.txt -o hmp_aerobiosis_small.res -t hmp_tree.txt -a hmp_annot.txt --title "HMP Aerobiosis" --annotations 2,3 --external_annotations 4,5,6 --fname_row 0 --skip_rows 1,2 --ftop 200
+```
+Now the ``hmp_tree.txt`` and ``hmp_annot.txt`` are generated. AND these two files are ready for doing really GraPhlAn analysis
+
+### Finally, Let's run GraPhlAn analysis
 
 
 
